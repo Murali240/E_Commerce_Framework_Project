@@ -1,0 +1,260 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>26/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Sep 13 22:29:02 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>357 seconds (357986 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ecommerce.tests.SearchProductsAndVerifyCartAfterLoginTest.searchProducts_AddToCart_VerifyPersistenceAfterLogin()'><b>searchProducts_AddToCart_VerifyPersistenceAfterLogin</b><br>Test class: com.ecommerce.tests.SearchProductsAndVerifyCartAfterLoginTest</td>
+<td><div><pre>java.lang.AssertionError: Cart product count mismatch after login expected [4] but found [3]
+	at com.ecommerce.tests.SearchProductsAndVerifyCartAfterLoginTest.searchProducts_AddToCart_VerifyPersistenceAfterLogin(SearchProductsAndVerifyCartAfterLoginTest.java:82)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+... Removed 21 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1594481508", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1594481508'><pre>java.lang.AssertionError: Cart product count mismatch after login expected [4] but found [3]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at com.ecommerce.tests.SearchProductsAndVerifyCartAfterLoginTest.searchProducts_AddToCart_VerifyPersistenceAfterLogin(SearchProductsAndVerifyCartAfterLoginTest.java:82)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+</pre></div></td>
+<td>10</td>
+<td>com.ecommerce.tests.SearchProductsAndVerifyCartAfterLoginTest@175b9425</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ecommerce.tests.VerifyPageScrollDownAndUpFunctionalityWithoutUpArrowTest.verifyPageScrollDownAndUpWithoutUpArrow()'><b>verifyPageScrollDownAndUpWithoutUpArrow</b><br>Test class: com.ecommerce.tests.VerifyPageScrollDownAndUpFunctionalityWithoutUpArrowTest</td>
+<td></td>
+<td>2</td>
+<td>com.ecommerce.tests.VerifyPageScrollDownAndUpFunctionalityWithoutUpArrowTest@5609159b</td></tr>
+<tr>
+<td title='com.ecommerce.tests.LoginTest.verifyLoginTest()'><b>verifyLoginTest</b><br>Test class: com.ecommerce.tests.LoginTest</td>
+<td></td>
+<td>10</td>
+<td>com.ecommerce.tests.LoginTest@3571b748</td></tr>
+<tr>
+<td title='com.ecommerce.tests.VerifyPageScrollDownAndUpArrowFunctionalityTest.verifyPageScrollDownAndUpArrow()'><b>verifyPageScrollDownAndUpArrow</b><br>Test class: com.ecommerce.tests.VerifyPageScrollDownAndUpArrowFunctionalityTest</td>
+<td></td>
+<td>2</td>
+<td>com.ecommerce.tests.VerifyPageScrollDownAndUpArrowFunctionalityTest@3f56875e</td></tr>
+<tr>
+<td title='com.ecommerce.tests.ContactUsTest.verifyContactUsFormSubmission()'><b>verifyContactUsFormSubmission</b><br>Test class: com.ecommerce.tests.ContactUsTest</td>
+<td></td>
+<td>5</td>
+<td>com.ecommerce.tests.ContactUsTest@6a03bcb1</td></tr>
+<tr>
+<td title='com.ecommerce.tests.PlaceOrderWithLoginBeforeCheckoutTest.verifyPlaceOrderAfterLoginBeforeCheckout()'><b>verifyPlaceOrderAfterLoginBeforeCheckout</b><br>Test class: com.ecommerce.tests.PlaceOrderWithLoginBeforeCheckoutTest</td>
+<td></td>
+<td>14</td>
+<td>com.ecommerce.tests.PlaceOrderWithLoginBeforeCheckoutTest@2118cddf</td></tr>
+<tr>
+<td title='com.ecommerce.tests.VerifyPlaceOrderRegistrationBeforeCheckoutTest.verifyPlaceOrderAfterSuccessfulRegistration()'><b>verifyPlaceOrderAfterSuccessfulRegistration</b><br>Test class: com.ecommerce.tests.VerifyPlaceOrderRegistrationBeforeCheckoutTest</td>
+<td></td>
+<td>21</td>
+<td>com.ecommerce.tests.VerifyPlaceOrderRegistrationBeforeCheckoutTest@21b2e768</td></tr>
+<tr>
+<td title='com.ecommerce.tests.ProductsPageTest.verifyProductDetails()'><b>verifyProductDetails</b><br>Test class: com.ecommerce.tests.ProductsPageTest</td>
+<td></td>
+<td>5</td>
+<td>com.ecommerce.tests.ProductsPageTest@4470f8a6</td></tr>
+<tr>
+<td title='com.ecommerce.tests.SubscriptionInHomeTest.verifySubscribeFlowInHome()'><b>verifySubscribeFlowInHome</b><br>Test class: com.ecommerce.tests.SubscriptionInHomeTest</td>
+<td></td>
+<td>1</td>
+<td>com.ecommerce.tests.SubscriptionInHomeTest@610f7aa</td></tr>
+<tr>
+<td title='com.ecommerce.tests.VerifyPlaceOrderRegistrationWhileCheckoutTest.verifyPlaceOrderWithRegistrationDuringCheckout()'><b>verifyPlaceOrderWithRegistrationDuringCheckout</b><br>Test class: com.ecommerce.tests.VerifyPlaceOrderRegistrationWhileCheckoutTest</td>
+<td></td>
+<td>21</td>
+<td>com.ecommerce.tests.VerifyPlaceOrderRegistrationWhileCheckoutTest@11fc564b</td></tr>
+<tr>
+<td title='com.ecommerce.tests.SignupTest.verifyNewUserSignup()'><b>verifyNewUserSignup</b><br>Test class: com.ecommerce.tests.SignupTest</td>
+<td></td>
+<td>7</td>
+<td>com.ecommerce.tests.SignupTest@17a7f733</td></tr>
+<tr>
+<td title='com.ecommerce.tests.RegisterUserWithExistingEmailTest.verifyNewUserSignup()'><b>verifyNewUserSignup</b><br>Test class: com.ecommerce.tests.RegisterUserWithExistingEmailTest</td>
+<td></td>
+<td>2</td>
+<td>com.ecommerce.tests.RegisterUserWithExistingEmailTest@394a2528</td></tr>
+<tr>
+<td title='com.ecommerce.tests.SubscriptionInCartTest.verifySubscribeFlowInCart()'><b>verifySubscribeFlowInCart</b><br>Test class: com.ecommerce.tests.SubscriptionInCartTest</td>
+<td></td>
+<td>2</td>
+<td>com.ecommerce.tests.SubscriptionInCartTest@672872e1</td></tr>
+<tr>
+<td title='com.ecommerce.tests.LoginWithInvalidCredentialsTest.verifyLoginWithInvalidCredentials()'><b>verifyLoginWithInvalidCredentials</b><br>Test class: com.ecommerce.tests.LoginWithInvalidCredentialsTest</td>
+<td></td>
+<td>2</td>
+<td>com.ecommerce.tests.LoginWithInvalidCredentialsTest@2b4bac49</td></tr>
+<tr>
+<td title='com.ecommerce.tests.ProductQuantityInCartTest.verifyProductQuantityAndAddToCart()'><b>verifyProductQuantityAndAddToCart</b><br>Test class: com.ecommerce.tests.ProductQuantityInCartTest</td>
+<td></td>
+<td>6</td>
+<td>com.ecommerce.tests.ProductQuantityInCartTest@49e5f737</td></tr>
+<tr>
+<td title='com.ecommerce.tests.VerifyAddToCartFromRecommendedItemsTest.verifyAddToCartFromRecommendedItems()'><b>verifyAddToCartFromRecommendedItems</b><br>Test class: com.ecommerce.tests.VerifyAddToCartFromRecommendedItemsTest</td>
+<td></td>
+<td>1</td>
+<td>com.ecommerce.tests.VerifyAddToCartFromRecommendedItemsTest@6236eb5f</td></tr>
+<tr>
+<td title='com.ecommerce.tests.VerifyCategoryProductsViewTest.verifyWomenDressCategoryNavigation()'><b>verifyWomenDressCategoryNavigation</b><br>Test class: com.ecommerce.tests.VerifyCategoryProductsViewTest</td>
+<td></td>
+<td>2</td>
+<td>com.ecommerce.tests.VerifyCategoryProductsViewTest@68567e20</td></tr>
+<tr>
+<td title='com.ecommerce.tests.BrandProductsNavigationTest.verifyBrandProductsNavigation()'><b>verifyBrandProductsNavigation</b><br>Test class: com.ecommerce.tests.BrandProductsNavigationTest</td>
+<td></td>
+<td>6</td>
+<td>com.ecommerce.tests.BrandProductsNavigationTest@3e96bacf</td></tr>
+<tr>
+<td title='com.ecommerce.tests.E_CommerceLogoTest.verifyE_CommerceLogoIsVisible()'><b>verifyE_CommerceLogoIsVisible</b><br>Test class: com.ecommerce.tests.E_CommerceLogoTest</td>
+<td></td>
+<td>0</td>
+<td>com.ecommerce.tests.E_CommerceLogoTest@fd07cbb</td></tr>
+<tr>
+<td title='com.ecommerce.tests.ProductsSearchTest.verifySearchProducts()'><b>verifySearchProducts</b><br>Test class: com.ecommerce.tests.ProductsSearchTest</td>
+<td></td>
+<td>6</td>
+<td>com.ecommerce.tests.ProductsSearchTest@3098cf3b</td></tr>
+<tr>
+<td title='com.ecommerce.tests.RemoveProductsFromCartTest.verifyRemoveProductFromCart()'><b>verifyRemoveProductFromCart</b><br>Test class: com.ecommerce.tests.RemoveProductsFromCartTest</td>
+<td></td>
+<td>5</td>
+<td>com.ecommerce.tests.RemoveProductsFromCartTest@fa36558</td></tr>
+<tr>
+<td title='com.ecommerce.tests.TestCasesPageNavigationTest.verifyNavigationToTestCasesPage()'><b>verifyNavigationToTestCasesPage</b><br>Test class: com.ecommerce.tests.TestCasesPageNavigationTest</td>
+<td></td>
+<td>4</td>
+<td>com.ecommerce.tests.TestCasesPageNavigationTest@484970b0</td></tr>
+<tr>
+<td title='com.ecommerce.tests.VerifyCheckoutAddressAfterRegistrationTest.validateDeliveryAndBillingAddressAreSame()'><b>validateDeliveryAndBillingAddressAreSame</b><br>Test class: com.ecommerce.tests.VerifyCheckoutAddressAfterRegistrationTest</td>
+<td></td>
+<td>29</td>
+<td>com.ecommerce.tests.VerifyCheckoutAddressAfterRegistrationTest@32910148</td></tr>
+<tr>
+<td title='com.ecommerce.tests.SubmitProductReviewTest.verifySubmitProductReviewSuccessfully()'><b>verifySubmitProductReviewSuccessfully</b><br>Test class: com.ecommerce.tests.SubmitProductReviewTest</td>
+<td></td>
+<td>6</td>
+<td>com.ecommerce.tests.SubmitProductReviewTest@76ed1b7c</td></tr>
+<tr>
+<td title='com.ecommerce.tests.DownloadInvoiceAfterPurchaseOrderTest.verifyInvoiceDownloadAfterPurchase()'><b>verifyInvoiceDownloadAfterPurchase</b><br>Test class: com.ecommerce.tests.DownloadInvoiceAfterPurchaseOrderTest</td>
+<td></td>
+<td>19</td>
+<td>com.ecommerce.tests.DownloadInvoiceAfterPurchaseOrderTest@7c1e2a9e</td></tr>
+<tr>
+<td title='com.ecommerce.tests.LogoutTest.verifyLoginAndLogoutTest()'><b>verifyLoginAndLogoutTest</b><br>Test class: com.ecommerce.tests.LogoutTest</td>
+<td></td>
+<td>6</td>
+<td>com.ecommerce.tests.LogoutTest@7c83dc97</td></tr>
+<tr>
+<td title='com.ecommerce.tests.AddProductsToCartTest.verifyAddProductsToCart()'><b>verifyAddProductsToCart</b><br>Test class: com.ecommerce.tests.AddProductsToCartTest</td>
+<td></td>
+<td>3</td>
+<td>com.ecommerce.tests.AddProductsToCartTest@7748410a</td></tr>
+</table><p>
+</body>
+</html>

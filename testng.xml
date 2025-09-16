@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="E_Commerce Suite" parallel="tests" thread-count="3">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.ecommerce.tests.ProductQuantityInCartTest"/>
+      <class name="com.ecommerce.tests.SearchProductsAndVerifyCartAfterLoginTest"/>
+      <class name="com.ecommerce.tests.ProductsSearchTest"/>
+      <class name="com.ecommerce.tests.SubscriptionInHomeTest"/>
+      <class name="com.ecommerce.tests.ContactUsTest"/>
+      <class name="com.ecommerce.tests.VerifyPlaceOrderRegistrationBeforeCheckoutTest"/>
+      <class name="com.ecommerce.base.BaseTest"/>
+      <class name="com.ecommerce.tests.VerifyPageScrollDownAndUpFunctionalityWithoutUpArrowTest"/>
+      <class name="com.ecommerce.tests.PlaceOrderWithLoginBeforeCheckoutTest"/>
+      <class name="com.ecommerce.tests.SignupTest"/>
+      <class name="com.ecommerce.tests.VerifyCategoryProductsViewTest"/>
+      <class name="com.ecommerce.tests.SubmitProductReviewTest"/>
+      <class name="com.ecommerce.tests.VerifyPlaceOrderRegistrationWhileCheckoutTest"/>
+      <class name="com.ecommerce.tests.RegisterUserWithExistingEmailTest"/>
+      <class name="com.ecommerce.tests.VerifyAddToCartFromRecommendedItemsTest"/>
+      <class name="com.ecommerce.tests.DownloadInvoiceAfterPurchaseOrderTest"/>
+      <class name="com.ecommerce.tests.RemoveProductsFromCartTest"/>
+      <class name="com.ecommerce.tests.SubscriptionInCartTest"/>
+      <class name="com.ecommerce.tests.VerifyCheckoutAddressAfterRegistrationTest"/>
+      <class name="com.ecommerce.tests.VerifyPageScrollDownAndUpArrowFunctionalityTest"/>
+      <class name="com.ecommerce.tests.LoginWithInvalidCredentialsTest"/>
+      <class name="com.ecommerce.tests.E_CommerceLogoTest"/>
+      <class name="com.ecommerce.tests.LoginTest"/>
+      <class name="com.ecommerce.tests.BrandProductsNavigationTest"/>
+      <class name="com.ecommerce.tests.TestCasesPageNavigationTest"/>
+      <class name="com.ecommerce.tests.ProductsPageTest"/>
+      <class name="com.ecommerce.tests.LogoutTest"/>
+      <class name="com.ecommerce.tests.AddProductsToCartTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
