@@ -14,7 +14,7 @@ public class DownloadInvoiceAfterPurchaseOrderTest extends BaseTest {
 	
 	private HomePage homePage;
 	
-	@Test (groups = {"skip"})
+	@Test
     public void verifyInvoiceDownloadAfterPurchase() throws InterruptedException {
 
 		/** Initializes the HomePage object with the active WebDriver */
@@ -118,7 +118,7 @@ public class DownloadInvoiceAfterPurchaseOrderTest extends BaseTest {
 	    ExtentManager.getTest().pass("Clicked on <b>Download Invoice</b> button");
 
         /** Step 2: Wait for download to complete */
-        WaitUtils.waitForSeconds(driver, 2);              // you can replace with WebDriverWait for file existence
+        WaitUtils.waitForSeconds(driver, 3);              // you can replace with WebDriverWait for file existence
 
         /** Step 3: Verify invoice file is downloaded */
         String downloadPath = "C:\\Users\\mural\\Downloads";                // adjust path

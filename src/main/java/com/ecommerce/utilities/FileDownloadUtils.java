@@ -4,12 +4,10 @@ import java.io.File;
 
 public class FileDownloadUtils {
 	
-	/**
-     * Verifies if expected file is downloaded in the given path
+	/** Verifies if expected file is downloaded in the given path
      * @param downloadPath directory where files are downloaded
      * @param expectedFileName part of the filename expected (ex: "invoice")
-     * @return true if file exists, false otherwise
-     */
+     * @return true if file exists, false otherwise  */
     public static boolean isFileDownloaded(String downloadPath, String expectedFileName) {
         File folder = new File(downloadPath);
         File[] files = folder.listFiles();

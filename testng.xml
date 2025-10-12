@@ -18,7 +18,6 @@
       <class name="com.ecommerce.tests.VerifyPlaceOrderRegistrationWhileCheckoutTest"/>
       <class name="com.ecommerce.tests.RegisterUserWithExistingEmailTest"/>
       <class name="com.ecommerce.tests.VerifyAddToCartFromRecommendedItemsTest"/>
-      <class name="com.ecommerce.tests.DownloadInvoiceAfterPurchaseOrderTest"/>
       <class name="com.ecommerce.tests.RemoveProductsFromCartTest"/>
       <class name="com.ecommerce.tests.SubscriptionInCartTest"/>
       <class name="com.ecommerce.tests.VerifyCheckoutAddressAfterRegistrationTest"/>
