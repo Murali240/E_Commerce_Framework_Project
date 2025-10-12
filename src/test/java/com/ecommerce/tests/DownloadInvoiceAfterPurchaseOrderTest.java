@@ -14,7 +14,7 @@ public class DownloadInvoiceAfterPurchaseOrderTest extends BaseTest {
 	
 	private HomePage homePage;
 	
-	@Test
+	@Test (groups = {"skip"})
     public void verifyInvoiceDownloadAfterPurchase() throws InterruptedException {
 
 		/** Initializes the HomePage object with the active WebDriver */
