@@ -1,17 +1,21 @@
 package com.ecommerce.pages;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.ecommerce.utilities.ExtentManager;
@@ -748,11 +752,46 @@ public class HomePage  {
         subscribeEmailBox.sendKeys(email);
     }
 
-    /** Method to click subscription arrow button */
+    /** Method to click subscription arrow button 
     public void clickSubscriptionArrow() {
         navigateToElement(subscriptionRightArrow);   // reuse helper
         subscriptionRightArrow.click();
+    }*/
+    
+    
+    /** Method to click subscription arrow button */
+    public void clickSubscriptionArrow() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12));
+
+        // Scroll arrow into the center of the screen
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({behavior:'instant', block:'center'});",
+                subscriptionRightArrow
+        );
+
+        // Wait until arrow is visible
+        wait.until(ExpectedConditions.visibilityOf(subscriptionRightArrow));
+
+        try {
+            // Move to element to avoid hover issues
+            new Actions(driver)
+                    .moveToElement(subscriptionRightArrow)
+                    .pause(Duration.ofMillis(400))
+                    .perform();
+
+            // Wait until clickable
+            wait.until(ExpectedConditions.elementToBeClickable(subscriptionRightArrow));
+
+            // Try normal click
+            subscriptionRightArrow.click();
+        }
+        catch (Exception e) {
+            // Fallback: JS click ignores popups / overlays
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", subscriptionRightArrow);
+        }
     }
+
+    
 
     /** Method to get subscription success message text */
     public String getSubscriptionSuccessMessage() {
@@ -761,21 +800,95 @@ public class HomePage  {
     }
     
  // Cart methods
-    /** Method to click on Cart link */
+    /** Method to click on Cart link 
     public void clickCartLink() {
         navigateToElement(cartLink); // reusing helper method
         cartLink.click();
+    }*/
+    
+    
+    public void clickCartLink() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12));
+
+        By cartLocator = By.xpath("//a[@href='/view_cart']");  // adjust if needed
+
+        try {
+            // Re-find fresh cart element to avoid stale element issue
+            WebElement freshCartLink = wait.until(
+                   ExpectedConditions.presenceOfElementLocated(cartLocator)
+            );
+
+            // Scroll into view
+            ((JavascriptExecutor) driver).executeScript(
+                    "arguments[0].scrollIntoView({block:'center'});",
+                    freshCartLink
+            );
+
+            // Try normal click
+            wait.until(ExpectedConditions.elementToBeClickable(freshCartLink));
+            freshCartLink.click();
+        }
+        catch (StaleElementReferenceException e) {
+
+            // REFRESH AND TRY AGAIN
+            WebElement freshCartLink2 = wait.until(
+                   ExpectedConditions.presenceOfElementLocated(cartLocator)
+            );
+
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", freshCartLink2);
+        }
     }
+
     
  // Adding products to Cart methods
     /** Method to click Add to Cart button dynamically based on product index
      * Example: productIndex=1 → (//a[contains(text(),'Add to cart')])[1]
-     * @param productIndex index number (1st=1, 2nd=3, 3rd=5 ...) */
+     * @param productIndex index number (1st=1, 2nd=3, 3rd=5 ...) 
     public void clickAddToCartButton(int productIndex) {
         String dynamicXpath = "(//a[contains(text(),'Add to cart')])[" + productIndex + "]";
         WebElement addToCartBtn = driver.findElement(By.xpath(dynamicXpath));
         addToCartBtn.click();
+    }*/
+    
+    
+    public void clickAddToCartButton(int productIndex) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12));
+
+        String dynamicXpath = "(//a[contains(text(),'Add to cart')])[" + productIndex + "]";
+
+        WebElement addToCartBtn = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath(dynamicXpath))
+        );
+
+        // Scroll to center
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({behavior: 'instant', block: 'center'});",
+                addToCartBtn
+        );
+
+        // Wait until no overlapping element is present
+        wait.until(driver1 -> {
+            try {
+                return addToCartBtn.isDisplayed() && addToCartBtn.isEnabled() && 
+                       addToCartBtn.getRect().getX() >= 0; // basic visibility check
+            } catch (Exception e) {
+                return false;
+            }
+        });
+
+        // Try normal click
+        try {
+            new Actions(driver).moveToElement(addToCartBtn).pause(Duration.ofMillis(400)).perform();
+            wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn));
+            addToCartBtn.click();
+        } 
+        catch (Exception e) {
+            // Fallback JS click when popup blocks normal click
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addToCartBtn);
+        }
     }
+
+
 
     /** Method to click Continue Shopping button */
     public void clickContinueShopping() {
@@ -907,10 +1020,42 @@ public class HomePage  {
         yearExpireInput.sendKeys(year);
     }
 
-    /** Click Pay and Confirm Order button */
+    /** Click Pay and Confirm Order button 
     public void clickPayAndConfirmOrder() {
         payAndConfirmOrderButton.click();
+    }*/
+    
+    
+    /** Click Pay and Confirm Order button */
+    public void clickPayAndConfirmOrder() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(12));
+
+        // Scroll to the button (center of screen)
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({behavior: 'instant', block: 'center'});",
+                payAndConfirmOrderButton
+        );
+
+        // Wait for button to become visible
+        wait.until(ExpectedConditions.visibilityOf(payAndConfirmOrderButton));
+
+        // Try normal click first
+        try {
+            new Actions(driver)
+                    .moveToElement(payAndConfirmOrderButton)
+                    .pause(Duration.ofMillis(500))
+                    .perform();
+
+            wait.until(ExpectedConditions.elementToBeClickable(payAndConfirmOrderButton));
+            payAndConfirmOrderButton.click();
+        } 
+        catch (Exception e) {
+            // Fallback to JavaScript click if popup blocks it
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", payAndConfirmOrderButton);
+        }
     }
+
+    
 
     /** Verify Order Placed heading is displayed */
     public boolean isOrderPlacedHeadingDisplayed() {

@@ -21,6 +21,7 @@ public class AddProductsToCartTest extends BaseTest {
 
 	     // Step 2: Add multiple products dynamically
 	        cartPage.clickAddToCartButton(1);            // 1st product
+	        System.out.println("Step1 passed");
 	        cartPage.clickContinueShopping();
 	        ExtentManager.getTest().info("Added 1st product to cart");
 

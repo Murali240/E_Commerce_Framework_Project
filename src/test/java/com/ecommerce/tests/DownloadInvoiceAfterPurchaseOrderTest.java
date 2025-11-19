@@ -25,7 +25,7 @@ public class DownloadInvoiceAfterPurchaseOrderTest extends BaseTest {
 	    ExtentManager.getTest().pass("Verified Home Page is displayed successfully");
 
 	    /** Add product to cart */
-	    homePage.clickAddToCartButton(1);
+	    homePage.clickAddToCartButton(3);
 	    ExtentManager.getTest().info("Added 1st product to cart");
 
 	    /** Click 'Cart' button */
