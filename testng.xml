@@ -9,7 +9,6 @@
       <class name="com.ecommerce.tests.SubscriptionInHomeTest"/>
       <class name="com.ecommerce.tests.ContactUsTest"/>
       <class name="com.ecommerce.tests.VerifyPlaceOrderRegistrationBeforeCheckoutTest"/>
-      <class name="com.ecommerce.base.BaseTest"/>
       <class name="com.ecommerce.tests.VerifyPageScrollDownAndUpFunctionalityWithoutUpArrowTest"/>
       <class name="com.ecommerce.tests.PlaceOrderWithLoginBeforeCheckoutTest"/>
       <class name="com.ecommerce.tests.SignupTest"/>
