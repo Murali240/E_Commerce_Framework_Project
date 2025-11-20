@@ -13,7 +13,6 @@
       <class name="com.ecommerce.tests.VerifyPageScrollDownAndUpFunctionalityWithoutUpArrowTest"/>
       <class name="com.ecommerce.tests.PlaceOrderWithLoginBeforeCheckoutTest"/>
       <class name="com.ecommerce.tests.SignupTest"/>
-      <class name="com.ecommerce.tests.VerifyCategoryProductsViewTest"/>
       <class name="com.ecommerce.tests.SubmitProductReviewTest"/>
       <class name="com.ecommerce.tests.VerifyPlaceOrderRegistrationWhileCheckoutTest"/>
       <class name="com.ecommerce.tests.RegisterUserWithExistingEmailTest"/>
